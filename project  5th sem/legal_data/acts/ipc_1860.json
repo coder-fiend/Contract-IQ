@@ -1,0 +1,60 @@
+{
+  "act_name": "Indian Penal Code, 1860",
+  "act_number": "Act No. 45 of 1860",
+  "short_code": "IPC_1860",
+  "enactment_year": 1860,
+  "commencement_date": "1862-01-01",
+  "status": "Repealed / Replaced by Bharatiya Nyaya Sanhita (BNS) on 1 July 2024 (Active for pre-July 2024 offences)",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/2263",
+  "verification_date": "2024-07-01",
+  "jurisdiction": "India",
+  "overview": "The historic general penal code of India. Replaced by the Bharatiya Nyaya Sanhita, 2023 with effect from 1 July 2024.",
+  "transition_notes": "IMPORTANT TRANSITIONAL PROVISION: Under Article 20(1) of the Constitution of India and Section 358(2) of BNS, the IPC continues to govern offences committed on or before 30 June 2024. For any incident occurring on or after 1 July 2024, BNS sections must be cited rather than IPC sections.",
+  "sections": [
+    {
+      "section_number": "405",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Criminal breach of trust",
+      "text": "Whoever, being in any manner entrusted with property, or with any dominion over property, dishonestly misappropriates or converts to his own use that property, or dishonestly uses or disposes of that property in violation of any direction of law prescribing the mode in which such trust is to be discharged, or of any legal contract, express or implied, which he has made touching the discharge of such trust, or wilfully suffers any other person so to do, commits criminal breach of trust.",
+      "explanation": "Historical provision for criminal breach of trust for incidents prior to 1 July 2024. For current offences, see Section 316 BNS.",
+      "bns_equivalent": "Section 316 BNS, 2023",
+      "keywords": ["criminal breach of trust", "405", "406", "security deposit", "misappropriation", "historical"]
+    },
+    {
+      "section_number": "415",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Cheating",
+      "text": "Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to cheat.",
+      "explanation": "Historical definition of cheating for incidents prior to 1 July 2024. For current offences, see Section 318 BNS.",
+      "bns_equivalent": "Section 318 BNS, 2023",
+      "keywords": ["cheating", "fraud", "415", "historical"]
+    },
+    {
+      "section_number": "420",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Cheating and dishonestly inducing delivery of property",
+      "text": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, or anything which is signed or sealed, and which is capable of being converted into a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+      "explanation": "The well-known Section 420 IPC for cheating and dishonestly inducing delivery of property. Replaced by Section 318(4) BNS for incidents after 1 July 2024.",
+      "bns_equivalent": "Section 318(4) BNS, 2023",
+      "keywords": ["420", "cheating", "delivery of property", "valuable security", "fraudulent inducement"]
+    },
+    {
+      "section_number": "503",
+      "chapter": "Chapter XXII: Of Criminal Intimidation, Insult and Annoyance",
+      "title": "Criminal intimidation",
+      "text": "Whoever threatens another with any injury to his person, reputation or property, or to the person or reputation of any one in whom that person is interested, with intent to cause alarm to that person, or to cause that person to do any act which he is not legally bound to do, or to omit to do any act which that person is legally entitled to do, as the means of avoiding the execution of such threat, commits criminal intimidation.",
+      "explanation": "Historical provision for criminal intimidation for events occurring prior to 1 July 2024. For current offences, see Section 351 BNS.",
+      "bns_equivalent": "Section 351 BNS, 2023",
+      "keywords": ["criminal intimidation", "503", "506", "threat", "historical"]
+    },
+    {
+      "section_number": "499",
+      "chapter": "Chapter XXI: Of Defamation",
+      "title": "Defamation",
+      "text": "Whoever, by words either spoken or intended to be read, or by signs or by visible representations, makes or publishes any imputation concerning any person intending to harm, or knowing or having reason to believe that such imputation will harm, the reputation of such person, is said, except in the cases hereinafter excepted, to defame that person.",
+      "explanation": "Historical definition of criminal defamation. Replaced by Section 356 BNS for incidents on or after 1 July 2024.",
+      "bns_equivalent": "Section 356 BNS, 2023",
+      "keywords": ["defamation", "499", "500", "reputation", "historical"]
+    }
+  ]
+}

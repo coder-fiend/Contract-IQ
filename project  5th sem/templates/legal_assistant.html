@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="assistant-layout">
+    <!-- Sidebar: Statute Guide & Suggested Questions -->
+    <aside class="sidebar-panel">
+        <div class="panel-header">
+            <h3>⚖️ Verified Indian Statutes</h3>
+        </div>
+
+        <div class="statutes-list">
+            <div class="statute-badge active">
+                <div class="badge-title">Bharatiya Nyaya Sanhita, 2023</div>
+                <div class="badge-desc">Effective 1 July 2024 (Replaces IPC)</div>
+            </div>
+            <div class="statute-badge">
+                <div class="badge-title">Indian Contract Act, 1872</div>
+                <div class="badge-desc">Agreements, breach, damages & Sec 27</div>
+            </div>
+            <div class="statute-badge">
+                <div class="badge-title">Consumer Protection Act, 2019</div>
+                <div class="badge-desc">Deficiency, unfair contracts & e-Daakhil</div>
+            </div>
+            <div class="statute-badge">
+                <div class="badge-title">Information Technology Act, 2000</div>
+                <div class="badge-desc">E-contracts, cyber cheating & data protection</div>
+            </div>
+        </div>
+
+        <div class="quick-tips-card">
+            <h4>💡 Suggested Legal Queries</h4>
+            <ul class="quick-questions">
+                <li onclick="setQuestion('My landlord is refusing to return my security deposit of 50000. What are my legal remedies?')">
+                    "Landlord refusing security deposit refund"
+                </li>
+                <li onclick="setQuestion('My employer terminated me without notice. What does Indian law say?')">
+                    "Employment termination without notice"
+                </li>
+                <li onclick="setQuestion('An online seller is refusing to refund money for a defective product. How to file on e-Daakhil?')">
+                    "Online shopping seller refund refusal"
+                </li>
+                <li onclick="setQuestion('What is the difference between IPC 420 and BNS 318 for cheating?')">
+                    "IPC 420 vs BNS 318 for cheating"
+                </li>
+                <li onclick="setQuestion('Is a post-employment non-compete clause valid under Section 27 of Indian Contract Act?')">
+                    "Validity of non-compete under Section 27"
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Chat Workspace -->
+    <section class="chat-workspace">
+        <div class="workspace-header">
+            <div class="header-details">
+                <h2>Indian Legal Assistant</h2>
+                <p class="header-sub">Ask general Indian law questions or describe your real-world legal situation.</p>
+            </div>
+            <div class="header-controls">
+                <button class="btn btn-sm btn-outline" id="clearChatBtn">Clear History</button>
+            </div>
+        </div>
+
+        <!-- Chat Stream -->
+        <div class="chat-messages" id="chatMessages">
+            {% if history %}
+                {% for msg in history %}
+                    <div class="chat-bubble {{ msg.sender }}">
+                        <div class="bubble-header">
+                            <span class="sender-tag">{{ 'You' if msg.sender == 'user' else 'Contract IQ' }}</span>
+                            <span class="query-tag">{{ msg.query_type }}</span>
+                        </div>
+                        <div class="bubble-body markdown-content">{{ msg.content | replace('\n', '<br>') | safe }}</div>
+                        {% if msg.sources %}
+                            <div class="bubble-sources">
+                                <strong>Legal Authorities & Provisions:</strong>
+                                <ul>
+                                    {% for src in msg.sources %}
+                                        <li>
+                                            ⚖️ <strong>{{ src.act_name }}</strong>: Section {{ src.section_number }} ({{ src.section_title }})
+                                            {% if src.status %}<span class="pill-sm">{{ src.status }}</span>{% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="chat-placeholder" id="chatPlaceholder">
+                    <div class="placeholder-icon">⚖️</div>
+                    <h3>Ask Indian Law Questions or Describe a Dispute</h3>
+                    <p>Contract IQ retrieves verified provisions from Indian Acts, explains rights in plain language, and suggests actionable next steps.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-bar">
+            <form id="chatForm" class="input-form">
+                <input type="text" id="userInput" placeholder="Describe a situation: 'My landlord refuses refund' or ask 'Is non-compete valid?'" autocomplete="off" required>
+                <button type="submit" class="btn btn-primary" id="sendBtn">
+                    <span>Ask IQ</span>
+                </button>
+            </form>
+            <div class="input-footer-note">
+                ℹ️ All citations reference verified Indian statutes. For criminal offences after 1 July 2024, BNS 2023 provisions are cited.
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

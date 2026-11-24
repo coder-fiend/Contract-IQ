@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="analysis-container">
+    <div class="analysis-header">
+        <h1>🔍 Analyze My Contract</h1>
+        <p class="subtitle">Automated risk assessment identifying one-sided clauses, ambiguous terms, and missing statutory protections under Indian law.</p>
+    </div>
+
+    <!-- Active Document Selector / Upload Trigger -->
+    <div class="analysis-toolbar">
+        <div class="doc-selector-wrapper">
+            <label for="analysisDocSelect"><strong>Target Agreement:</strong></label>
+            <select id="analysisDocSelect" class="form-select">
+                {% if documents %}
+                    {% for doc in documents %}
+                        <option value="{{ doc.document_id }}" {% if active_doc and active_doc.document_id == doc.document_id %}selected{% endif %}>
+                            {{ doc.filename }} ({{ doc.page_count }} Pages)
+                        </option>
+                    {% endfor %}
+                {% else %}
+                    <option value="">No document uploaded yet</option>
+                {% endif %}
+            </select>
+        </div>
+        <div class="toolbar-actions">
+            <button id="runAnalysisBtn" class="btn btn-primary" {% if not active_doc %}disabled{% endif %}>
+                ⚡ Run Contract Risk Audit
+            </button>
+            <a href="/documents" class="btn btn-outline">+ Upload New PDF</a>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="analysisLoading" class="analysis-loading hidden">
+        <div class="spinner"></div>
+        <p>Scanning clauses against Indian Contract Act & commercial risk benchmarks...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div id="analysisResults" class="analysis-results {% if not analysis %}hidden{% endif %}">
+        {% if analysis %}
+            <!-- Score Summary Cards -->
+            <div class="risk-overview-grid">
+                <div class="risk-card posture-{{ analysis.overall_risk | lower }}">
+                    <div class="risk-label">Overall Risk Category</div>
+                    <div class="risk-value">{{ analysis.overall_risk }} Risk</div>
+                    <div class="risk-hint">Evaluated against Section 27, 74 ICA & CPA 2019</div>
+                </div>
+
+                <div class="risk-card score-card">
+                    <div class="risk-label">Contract Health Score</div>
+                    <div class="risk-value">{{ analysis.overall_score }} / 100</div>
+                    <div class="risk-hint">Higher score indicates fairer terms</div>
+                </div>
+
+                <div class="risk-card issues-card">
+                    <div class="risk-label">Identified Clause Risks</div>
+                    <div class="risk-value">{{ analysis.findings | length }} Flagged</div>
+                    <div class="risk-hint">{{ analysis.missing_clauses | length }} protective provisions missing</div>
+                </div>
+            </div>
+
+            <!-- Findings Breakdown with Interactive Filter -->
+            <div class="audit-section">
+                <div class="audit-section-header">
+                    <h2>⚠️ Identified Clause Risks</h2>
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-filter="all">All Risks ({{ analysis.findings | length }})</button>
+                        <button class="filter-pill" data-filter="high">High Risk Only</button>
+                        <button class="filter-pill" data-filter="medium">Medium Risk</button>
+                    </div>
+                </div>
+
+                <div class="findings-list">
+                    {% for f in analysis.findings %}
+                        <div class="finding-card risk-border-{{ f.risk_level | lower }}">
+                            <div class="finding-header">
+                                <span class="finding-title">{{ f.clause_name }}</span>
+                                <span class="risk-badge badge-{{ f.risk_level | lower }}">{{ f.risk_level }} Risk</span>
+                            </div>
+                            <div class="finding-snippet">
+                                <code>{{ f.snippet }}</code>
+                            </div>
+                            <div class="finding-body">
+                                <p><strong>Problem:</strong> {{ f.reason }}</p>
+                                <p><strong>Indian Law Perspective:</strong> {{ f.legal_context }}</p>
+                                <p class="recommendation"><strong>Recommendation:</strong> {{ f.recommendation }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Missing Protective Clauses -->
+            {% if analysis.missing_clauses %}
+                <div class="audit-section">
+                    <h2>📋 Omitted Standard Protective Clauses</h2>
+                    <div class="missing-grid">
+                        {% for m in analysis.missing_clauses %}
+                            <div class="missing-card">
+                                <h4>{{ m.clause_name }}</h4>
+                                <p>{{ m.purpose }}</p>
+                                <span class="action-tag">💡 Recommendation: {{ m.recommendation }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Empty State when no analysis yet -->
+    <div id="noAnalysisNotice" class="empty-audit-card {% if analysis %}hidden{% endif %}">
+        <div class="empty-icon">🛡️</div>
+        <h3>No Risk Audit Generated Yet</h3>
+        <p>Click "Run Contract Risk Audit" above to analyze your agreement for non-compete clauses, penalty stipulations, unlimited indemnities, and missing protections.</p>
+    </div>
+</div>
+{% endblock %}

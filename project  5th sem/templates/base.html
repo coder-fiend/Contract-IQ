@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title or "Contract IQ | AI-Powered Indian Legal Assistant" }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="brand-badge-icon">⚖️</span>
+                <div class="brand-text-group">
+                    <span class="brand-name">Contract<span class="brand-iq">IQ</span></span>
+                    <span class="brand-tagline">Legal Intelligence</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/" class="nav-item {% if request.url.path == '/' %}active{% endif %}">
+                    <span class="nav-icon">🏠</span> Home
+                </a>
+                <a href="/documents" class="nav-item {% if '/documents' in request.url.path %}active{% endif %}">
+                    <span class="nav-icon">📄</span> Document Assistant
+                </a>
+                <a href="/legal" class="nav-item {% if '/legal' in request.url.path %}active{% endif %}">
+                    <span class="nav-icon">⚖️</span> Legal Assistant
+                </a>
+                <a href="/analysis" class="nav-item {% if '/analysis' in request.url.path %}active{% endif %}">
+                    <span class="nav-icon">🛡️</span> Contract Analysis
+                </a>
+                <a href="/history" class="nav-item {% if '/history' in request.url.path %}active{% endif %}">
+                    <span class="nav-icon">📜</span> History
+                </a>
+                <a href="/about" class="nav-item {% if '/about' in request.url.path %}active{% endif %}">
+                    <span class="nav-icon">ℹ️</span> About
+                </a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Light / Dark Theme" aria-label="Toggle Theme">
+                    <span class="theme-icon light-icon">☀️</span>
+                    <span class="theme-icon dark-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Interactive Toast Container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p class="disclaimer">
+                    <strong>Legal Notice:</strong> Contract IQ is an AI legal assistant providing informational analysis grounded in verified Indian statutes (Indian Contract Act 1872, BNS 2023, CPA 2019, IT Act 2000). It is not a substitute for formal legal representation by an advocate enrolled with the Bar Council of India.
+                </p>
+                <p class="copyright">© 2026 Contract IQ. Crafted with privacy & source-grounded precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

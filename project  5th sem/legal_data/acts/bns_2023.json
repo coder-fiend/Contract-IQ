@@ -1,0 +1,78 @@
+{
+  "act_name": "Bharatiya Nyaya Sanhita, 2023",
+  "act_number": "Act No. 45 of 2023",
+  "short_code": "BNS_2023",
+  "enactment_year": 2023,
+  "commencement_date": "2024-07-01",
+  "status": "Active (Effective 1 July 2024)",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/20062",
+  "verification_date": "2024-07-01",
+  "jurisdiction": "India",
+  "overview": "The substantive penal code governing criminal offences in India from 1 July 2024 onwards, repealing and replacing the Indian Penal Code, 1860.",
+  "transition_notes": "BNS applies to all offences committed on or after 1 July 2024. For offences committed on or before 30 June 2024, the Indian Penal Code (IPC 1860) remains applicable under Article 20(1) of the Constitution of India and Section 358 of BNS.",
+  "sections": [
+    {
+      "section_number": "358",
+      "chapter": "Chapter XX: Repeal and Savings",
+      "title": "Repeal and savings",
+      "text": "(1) The Indian Penal Code (45 of 1860) is hereby repealed. (2) Notwithstanding the repeal of the Code: (a) any right, title, obligation or liability already acquired, accrued or incurred under the repealed Code; (b) any penalty, forfeiture or punishment incurred in respect of any offence committed under the repealed Code; (c) any investigation, legal proceeding or remedy in respect of any such right, privilege, obligation, liability, penalty, forfeiture or punishment, may be instituted, continued or enforced, as if the Code had not been repealed.",
+      "explanation": "Explicit transition rule: Any offence committed prior to 1 July 2024 is investigated and prosecuted under IPC, 1860. BNS only applies prospectively to acts occurring on or after 1 July 2024.",
+      "ipc_equivalent": "General Clauses Act Sec 6",
+      "keywords": ["repeal", "savings", "transition", "commencement", "prospective", "1 July 2024", "IPC replacement"]
+    },
+    {
+      "section_number": "316",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Criminal breach of trust",
+      "text": "(1) Whoever, being in any manner entrusted with property, or with any dominion over property, dishonestly misappropriates or converts to his own use that property, or dishonestly uses or disposes of that property in violation of any direction of law prescribing the mode in which such trust is to be discharged, or of any legal contract, express or implied, which he has made touching the discharge of such trust, or wilfully suffers any other person so to do, commits criminal breach of trust. (2) Whoever commits criminal breach of trust shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both.",
+      "explanation": "Applicable when a landlord wrongfully refuses to return a tenant's security deposit, or an employer/agent misappropriates entrusted funds or property.",
+      "ipc_equivalent": "Section 405 & 406 IPC",
+      "keywords": ["criminal breach of trust", "security deposit", "misappropriation", "entrusted property", "landlord tenant"]
+    },
+    {
+      "section_number": "318",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Cheating",
+      "text": "(1) Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, commits cheating. (4) Whoever cheats and thereby dishonestly induces the person deceived to deliver any property, shall be punished with imprisonment for a term which may extend to seven years, and shall also be liable to fine.",
+      "explanation": "Governs deceptive business dealings, online shopping scams, fraud in contract inducement, or false representations where money/property is fraudulently obtained.",
+      "ipc_equivalent": "Section 415 & 420 IPC",
+      "keywords": ["cheating", "fraud", "420", "inducement", "online scam", "delivery of property", "refund refusal"]
+    },
+    {
+      "section_number": "351",
+      "chapter": "Chapter XVIII: Of Offences Against Intimidation, Insult and Annoyance",
+      "title": "Criminal intimidation",
+      "text": "(1) Whoever threatens another with any injury to his person, reputation or property, or to the person or reputation of any one in whom that person is interested, with intent to cause alarm to that person, or to cause that person to do any act which he is not legally bound to do, or to omit to do any act which that person is legally entitled to do, as the means of avoiding the execution of such threat, commits criminal intimidation. (2) Punishment up to two years imprisonment, or fine, or both; if threat be to cause death or grievous hurt, imprisonment up to seven years.",
+      "explanation": "Applies when someone receives direct threats of violence, extortion, harassment, or harm to reputation/property.",
+      "ipc_equivalent": "Section 503 & 506 IPC",
+      "keywords": ["criminal intimidation", "threat", "harassment", "extortion", "alarm", "blackmail"]
+    },
+    {
+      "section_number": "356",
+      "chapter": "Chapter XVIII: Of Offences Against Intimidation, Insult and Annoyance",
+      "title": "Defamation",
+      "text": "(1) Whoever, by words either spoken or intended to be read, or by signs or by visible representations, makes or publishes any imputation concerning any person intending to harm, or knowing or having reason to believe that such imputation will harm, the reputation of such person, is said to defame that person. (2) Punishment: Simple imprisonment up to two years, or fine, or both, or with community service.",
+      "explanation": "Protects individuals from false and malicious public accusations, reviews, or social media statements damaging personal or professional reputation.",
+      "ipc_equivalent": "Section 499 & 500 IPC",
+      "keywords": ["defamation", "reputation", "slander", "libel", "community service"]
+    },
+    {
+      "section_number": "303",
+      "chapter": "Chapter XVII: Of Offences Against Property",
+      "title": "Theft",
+      "text": "(1) Whoever, intending to take dishonestly any movable property out of the possession of any person without that person's consent, moves that property in order to such taking, is said to commit theft. (2) Punishment: Imprisonment up to three years, or fine, or both, and in case of second or subsequent conviction, imprisonment up to five years and with fine.",
+      "explanation": "Dishonest removal of movable property without consent.",
+      "ipc_equivalent": "Section 378 & 379 IPC",
+      "keywords": ["theft", "stolen property", "possession", "movable property"]
+    },
+    {
+      "section_number": "61",
+      "chapter": "Chapter IV: Of Abetment, Criminal Conspiracy and Attempt",
+      "title": "Criminal conspiracy",
+      "text": "(1) When two or more persons agree to do, or cause to be done: (a) an illegal act; or (b) an act which is not illegal by illegal means, such an agreement is designated a criminal conspiracy. (2) Whoever is a party to a criminal conspiracy to commit an offence punishable with death, imprisonment for life or rigorous imprisonment for a term of two years or upwards, shall be punished in the same manner as if he had abetted such offence.",
+      "explanation": "Agreement between two or more parties to commit an unlawful act.",
+      "ipc_equivalent": "Section 120A & 120B IPC",
+      "keywords": ["conspiracy", "illegal agreement", "abetment", "joint liability"]
+    }
+  ]
+}

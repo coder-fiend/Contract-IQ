@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="assistant-layout">
+    <!-- Sidebar / Document Manager -->
+    <aside class="sidebar-panel">
+        <div class="panel-header">
+            <h3>📑 Document Manager</h3>
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-box">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="drop-zone" id="dropZone">
+                    <span class="drop-icon">📤</span>
+                    <p class="drop-text">Drag & drop legal PDF or <strong>Browse</strong></p>
+                    <input type="file" id="pdfFileInput" name="file" accept=".pdf" class="file-input-hidden" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="uploadBtn">
+                    Upload & Index PDF
+                </button>
+            </form>
+            <div id="uploadStatus" class="status-msg"></div>
+        </div>
+
+        <!-- Documents List -->
+        <div class="doc-list-section">
+            <h4>Uploaded Contracts</h4>
+            <div id="documentsList" class="doc-items">
+                {% if documents %}
+                    {% for doc in documents %}
+                        <div class="doc-item {% if active_doc and active_doc.document_id == doc.document_id %}active{% endif %}" data-id="{{ doc.document_id }}">
+                            <div class="doc-info">
+                                <span class="doc-name" title="{{ doc.filename }}">{{ doc.filename }}</span>
+                                <span class="doc-meta">{{ doc.page_count }} Pages</span>
+                            </div>
+                            <div class="doc-actions">
+                                <a href="/analysis" class="btn-xs" title="Analyze Contract">Audit</a>
+                                <button class="btn-xs btn-danger delete-doc-btn" data-id="{{ doc.document_id }}">✕</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="empty-state-text" id="emptyDocsNotice">No PDF uploaded yet. Upload an agreement to begin document QA.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="quick-tips-card">
+            <h4>💡 Recommended Questions</h4>
+            <ul class="quick-questions">
+                <li onclick="setQuestion('What are the termination conditions and notice period?')">"What is the notice period for termination?"</li>
+                <li onclick="setQuestion('Is there any penalty or forfeiture of security deposit?')">"Is there any deposit forfeiture clause?"</li>
+                <li onclick="setQuestion('Does this contract contain a non-compete clause?')">"Is there a non-compete restriction?"</li>
+                <li onclick="setQuestion('Which court has jurisdiction for disputes?')">"Which court has dispute jurisdiction?"</li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Chat Interface -->
+    <section class="chat-workspace">
+        <div class="workspace-header">
+            <div class="header-details">
+                <h2>Document Assistant</h2>
+                <p class="header-sub" id="activeDocTitle">
+                    {% if active_doc %}
+                        Active: <strong>{{ active_doc.filename }}</strong> ({{ active_doc.page_count }} pages)
+                    {% else %}
+                        No document active — please upload a legal document.
+                    {% endif %}
+                </p>
+            </div>
+            <div class="header-controls">
+                <button class="btn btn-sm btn-outline" id="clearChatBtn">Clear Chat</button>
+            </div>
+        </div>
+
+        <!-- Chat Stream -->
+        <div class="chat-messages" id="chatMessages">
+            {% if history %}
+                {% for msg in history %}
+                    <div class="chat-bubble {{ msg.sender }}">
+                        <div class="bubble-header">
+                            <span class="sender-tag">{{ 'You' if msg.sender == 'user' else 'Contract IQ' }}</span>
+                            <span class="query-tag">{{ msg.query_type }}</span>
+                        </div>
+                        <div class="bubble-body markdown-content">{{ msg.content | replace('\n', '<br>') | safe }}</div>
+                        {% if msg.sources %}
+                            <div class="bubble-sources">
+                                <strong>Citations & References:</strong>
+                                <ul>
+                                    {% for src in msg.sources %}
+                                        <li>
+                                            {% if src.type == 'document' %}
+                                                📄 <strong>Page {{ src.page_number }}</strong>: {{ src.clause }}
+                                            {% else %}
+                                                ⚖️ <strong>{{ src.act_name }}</strong>: Sec {{ src.section_number }} ({{ src.section_title }})
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="chat-placeholder" id="chatPlaceholder">
+                    <div class="placeholder-icon">📄</div>
+                    <h3>Ask Any Question About Your Document</h3>
+                    <p>Contract IQ will retrieve relevant clauses, explain them in simple English, and cite the exact page numbers.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-bar">
+            <form id="chatForm" class="input-form">
+                <input type="text" id="userInput" placeholder="Ask about clauses, notice periods, penalties, or legal validity..." autocomplete="off" required>
+                <button type="submit" class="btn btn-primary" id="sendBtn">
+                    <span>Ask IQ</span>
+                </button>
+            </form>
+            <div class="input-footer-note">
+                🔒 Privacy: Documents are processed securely in your isolated session and never shared across users.
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="badge-pill">🇮🇳 Grounded in Indian Law & Statutes</div>
+        <h1 class="hero-heading">Understand Your Legal Documents.<br>Understand Your Rights.</h1>
+        <p class="hero-subtitle">
+            Your AI-powered Indian legal assistant for documents, laws and everyday legal questions.
+        </p>
+        
+        <div class="hero-actions">
+            <a href="/documents" class="btn btn-primary">Open Document Assistant</a>
+            <a href="/legal" class="btn btn-secondary">Ask Legal Question</a>
+            <a href="/analysis" class="btn btn-outline">Analyze Contract Risk</a>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="section-container">
+        <h2 class="section-title">Core Capabilities</h2>
+        <p class="section-subtitle">Everything you need to navigate agreements and Indian statutory provisions with clarity.</p>
+
+        <div class="features-grid">
+            <!-- Feature Card 1 -->
+            <div class="feature-card">
+                <div class="card-icon">📄</div>
+                <h3 class="card-title">Analyze Legal Documents</h3>
+                <p class="card-description">
+                    Upload lease deeds, employment contracts, NDAs, or commercial agreements. Ask specific questions and receive verified answers with page citations and clause references.
+                </p>
+                <div class="card-footer">
+                    <a href="/documents" class="card-link">Launch Document Assistant →</a>
+                </div>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card">
+                <div class="card-icon">⚖️</div>
+                <h3 class="card-title">Ask Indian Law Questions</h3>
+                <p class="card-description">
+                    Inquire directly about the Indian Contract Act 1872, Bharatiya Nyaya Sanhita (BNS) 2023, historical IPC transitions, Consumer Protection Act 2019, and IT Act 2000.
+                </p>
+                <div class="card-footer">
+                    <a href="/legal" class="card-link">Explore Legal Knowledge →</a>
+                </div>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="feature-card">
+                <div class="card-icon">💡</div>
+                <h3 class="card-title">Understand Legal Problems</h3>
+                <p class="card-description">
+                    Facing a real-world dispute? Describe your issue (withheld security deposits, termination without notice, online refund refusals) and get practical legal remedies and steps.
+                </p>
+                <div class="card-footer">
+                    <a href="/legal?type=real_world" class="card-link">Resolve Legal Situation →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-item">
+            <div class="stat-number">BNS 2023</div>
+            <div class="stat-label">Commenced 1 July 2024</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100% Isolated</div>
+            <div class="stat-label">Session Document Privacy</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Page Citations</div>
+            <div class="stat-label">Source-Grounded QA</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Risk Audit</div>
+            <div class="stat-label">High / Med / Low Alerts</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

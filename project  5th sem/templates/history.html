@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="history-container">
+    <div class="history-header">
+        <div>
+            <h1>📜 Conversation History</h1>
+            <p class="subtitle">Review your past inquiries, answers, and source citations.</p>
+        </div>
+        <div>
+            <button id="clearAllHistoryBtn" class="btn btn-outline btn-danger">Clear All History</button>
+        </div>
+    </div>
+
+    <div class="history-feed" id="historyFeed">
+        {% if history %}
+            {% for msg in history %}
+                <div class="history-card {{ msg.sender }}">
+                    <div class="card-meta">
+                        <span class="role-badge">{{ 'User' if msg.sender == 'user' else 'Contract IQ' }}</span>
+                        <span class="type-badge">{{ msg.query_type }}</span>
+                        <span class="time-stamp">{{ msg.created_at[:16].replace('T', ' ') }}</span>
+                    </div>
+                    <div class="card-text markdown-content">
+                        {{ msg.content | replace('\n', '<br>') | safe }}
+                    </div>
+                    {% if msg.sources %}
+                        <div class="history-sources">
+                            <strong>Sources:</strong>
+                            {% for src in msg.sources %}
+                                <span class="source-tag">
+                                    {% if src.type == 'document' %}
+                                        Page {{ src.page_number }} ({{ src.clause }})
+                                    {% else %}
+                                        {{ src.act_name }} - Sec {{ src.section_number }}
+                                    {% endif %}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <p>No chat history recorded in this session yet.</p>
+                <a href="/documents" class="btn btn-primary">Start Document Chat</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

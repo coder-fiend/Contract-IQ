@@ -1,0 +1,62 @@
+{
+  "act_name": "Consumer Protection Act, 2019",
+  "act_number": "Act No. 35 of 2019",
+  "short_code": "CPA_2019",
+  "enactment_year": 2019,
+  "commencement_date": "2020-07-20",
+  "status": "Active",
+  "source_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+  "verification_date": "2024-07-01",
+  "jurisdiction": "India",
+  "overview": "Law providing protection for consumer interests, dispute redressal commissions, unfair contracts, unfair trade practices, and product liability in India.",
+  "sections": [
+    {
+      "section_number": "2(7)",
+      "chapter": "Chapter I: Preliminary",
+      "title": "Consumer Defined",
+      "text": "A person who buys any goods or hires or avails of any service for a consideration paid or promised, whether through offline or online transactions, electronic means, teleshopping, direct selling, or multi-level marketing. Excludes persons obtaining goods for resale or commercial purposes.",
+      "explanation": "Any end-consumer purchasing goods or services for personal use is protected under the Act, including users of e-commerce platforms and rental service tenants.",
+      "keywords": ["consumer", "buyer", "consideration", "e-commerce", "commercial purpose exception"]
+    },
+    {
+      "section_number": "2(11)",
+      "chapter": "Chapter I: Preliminary",
+      "title": "Deficiency in Service Defined",
+      "text": "Any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service.",
+      "explanation": "Includes unreasonable delay in refunds, refusal to provide agreed services, or providing sub-standard services.",
+      "keywords": ["deficiency", "service deficiency", "refund delay", "inadequate service", "fault"]
+    },
+    {
+      "section_number": "2(46)",
+      "chapter": "Chapter I: Preliminary",
+      "title": "Unfair Contract Defined",
+      "text": "A contract between a manufacturer or trader or service provider on one hand, and a consumer on the other, having terms causing significant change in the rights of such consumer, including: (i) requiring manifestly excessive security deposits; (ii) imposing disproportionate penalty for breach; (iii) refusing to accept early repayment of debts; (iv) entitling unilateral termination without reasonable cause; or (v) imposing unreasonable charges or conditions.",
+      "explanation": "Protects consumers against one-sided standard-form contracts (such as builder-buyer agreements, rental platforms, or SaaS terms) with oppressive clauses.",
+      "keywords": ["unfair contract", "excessive deposit", "unilateral termination", "disproportionate penalty", "one-sided"]
+    },
+    {
+      "section_number": "2(47)",
+      "chapter": "Chapter I: Preliminary",
+      "title": "Unfair Trade Practice Defined",
+      "text": "A trade practice which, for the purpose of promoting the sale, use or supply of any goods or service, adopts any unfair method or unfair or deceptive practice, including false representation regarding standards, quality, refusal to issue bill/receipt, or refusal to take back defective goods or refund money within promised timeframes.",
+      "explanation": "Prohibits deceptive advertising, fake claims, and refusal of sellers to honor return/refund commitments.",
+      "keywords": ["unfair trade practice", "misleading advertisement", "refusal to refund", "false representation"]
+    },
+    {
+      "section_number": "34 & 35",
+      "chapter": "Chapter IV: Consumer Disputes Redressal Commission",
+      "title": "Jurisdiction and Manner of Filing Complaint before District Commission",
+      "text": "District Commission has jurisdiction to entertain complaints where the value of goods or services paid as consideration does not exceed fifty lakh rupees. Complaints can be filed in physical format or electronically through the e-Daakhil portal (edaakhil.nic.in) where the complainant resides or works for gain.",
+      "explanation": "Consumers can file complaints online without hiring a lawyer, directly at their home district commission using e-Daakhil.",
+      "keywords": ["district commission", "e-daakhil", "online complaint", "jurisdiction", "consumer forum"]
+    },
+    {
+      "section_number": "39",
+      "chapter": "Chapter IV: Consumer Disputes Redressal Commission",
+      "title": "Remedies and Orders by Commission",
+      "text": "Where Commission is satisfied of defect or deficiency, it may direct: (a) removal of defect; (b) replacement of goods; (c) return of price or charges paid with interest; (d) compensation for loss, injury, or harassment suffered; (e) punitive damages; (f) discontinuation of unfair trade practices.",
+      "explanation": "Commission can order complete refund with interest, compensation for mental harassment, and legal litigation costs.",
+      "keywords": ["remedies", "refund order", "compensation", "interest", "punitive damages", "harassment"]
+    }
+  ]
+}
